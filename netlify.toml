@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+# The Next.js plugin is automatically provided by Netlify,
+# but we explicitly define the build environment memory limits just in case.
+[build.environment]
+  NODE_VERSION = "20"
+  NEXT_PRIVATE_LOCAL_WEBPACK = "true"
