@@ -1,0 +1,29 @@
+{
+  "HomePage": {
+    "title": "Welcome to BitWallet",
+    "subtitleStart": "Buy and Sell Crypto for Cash ",
+    "typewriter1": "instantly.",
+    "typewriter2": "securely.",
+    "typewriter3": "globally.",
+    "typewriter4": "anywhere.",
+    "login": "Login / Connect",
+    "heroCta": "Get Started",
+    "chartTitle": "Live Bitcoin Chart",
+    "calcTitle": "Quick Calculator",
+    "calcDesc": "See instantly how much cash you'll receive for your crypto.",
+    "howItWorksTitle": "How It Works?",
+    "howItWorksStep1": "1. Sign up or connect your Web3 wallet.",
+    "howItWorksStep2": "2. Deposit your crypto into our platform address.",
+    "howItWorksStep3": "3. Receive Fiat cash in your balance instantly.",
+    "whereWeWorkTitle": "Where we operate?",
+    "whereWeWorkDesc": "BitWallet is a top-tier global platform. We operate 24/7 completely digitally across 150+ countries delivering fast and secure transactions."
+  },
+  "Dashboard": {
+    "title": "Your Dashboard",
+    "fiatBalance": "Fiat Balance (USD)",
+    "cryptoBalance": "Crypto Balance",
+    "deposit": "Deposit Crypto to Sell",
+    "simulateDeposit": "Simulate Deposit",
+    "depositAddress": "Platform Deposit Address"
+  }
+}

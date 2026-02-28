@@ -1,0 +1,29 @@
+{
+    "HomePage": {
+        "title": "Bem-vindo ao BitWallet",
+        "subtitleStart": "Compre e Venda Cripto por Dinheiro ",
+        "typewriter1": "instantaneamente.",
+        "typewriter2": "com segurança.",
+        "typewriter3": "globalmente.",
+        "typewriter4": "em qualquer lugar.",
+        "login": "Fazer Login",
+        "heroCta": "Comece Agora",
+        "chartTitle": "Preço do Bitcoin em Tempo Real",
+        "calcTitle": "Calculadora Rápida",
+        "calcDesc": "Veja na hora o quanto você vai receber pela sua criptomoeda.",
+        "howItWorksTitle": "Como Funciona?",
+        "howItWorksStep1": "1. Crie uma conta ou conecte sua carteira Web3.",
+        "howItWorksStep2": "2. Deposite sua criptomoeda em nosso endereço exclusivo.",
+        "howItWorksStep3": "3. Receba o saldo em dinheiro (Fiat) na sua conta instantaneamente.",
+        "whereWeWorkTitle": "Onde nós funcionamos?",
+        "whereWeWorkDesc": "O BitWallet é uma plataforma global. Funcionamos 24/7 de forma totalmente digital em mais de 150 países, garantindo agilidade e segurança."
+    },
+    "Dashboard": {
+        "title": "Seu Painel",
+        "fiatBalance": "Saldo Fiat (USD)",
+        "cryptoBalance": "Saldo Cripto",
+        "deposit": "Depositar Cripto para Vender",
+        "simulateDeposit": "Simular Depósito",
+        "depositAddress": "Endereço de Depósito da Plataforma"
+    }
+}
