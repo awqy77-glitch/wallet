@@ -30,6 +30,7 @@ const queryClient = new QueryClient();
 interface ProvidersProps {
     children: React.ReactNode;
     locale: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     messages: any;
 }
 

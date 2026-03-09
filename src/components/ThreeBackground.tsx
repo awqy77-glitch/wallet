@@ -24,32 +24,40 @@ function CryptoCoin({
 
     const { mouse, viewport } = useThree();
 
+    // Responsive positioning: bring items dramatically closer to center on small screens
+    const isMobile = viewport.width < 5;
+    const finalPosition: [number, number, number] = isMobile
+        ? [position[0] * 0.25, position[1] * 0.35, position[2]]
+        : position;
+    const finalSize = isMobile ? size * 0.45 : size;
+
     useFrame((state, delta) => {
         if (groupRef.current) {
-            // Continuous rotation
-            groupRef.current.rotation.x += delta * rotationSpeed[0];
-            groupRef.current.rotation.y += delta * rotationSpeed[1];
+            // Spin like a standing coin using Y axis (spinning to the right)
+            groupRef.current.rotation.y -= delta * 2.0; // Fast vertical spin
 
             // Mouse interaction: slight parallax effect
             const targetX = (mouse.x * viewport.width) / 5;
             const targetY = (mouse.y * viewport.height) / 5;
 
-            groupRef.current.position.x += (position[0] + targetX - groupRef.current.position.x) * 0.05;
-            groupRef.current.position.y += (position[1] + targetY - groupRef.current.position.y) * 0.05;
+            groupRef.current.position.x += (finalPosition[0] + targetX - groupRef.current.position.x) * 0.05;
+            groupRef.current.position.y += (finalPosition[1] + targetY - groupRef.current.position.y) * 0.05;
         }
     });
 
     return (
-        <Float speed={2} rotationIntensity={1.5} floatIntensity={2}>
+        <Float speed={3} rotationIntensity={0.2} floatIntensity={2} floatingRange={[-0.2, 0.2]}>
             <group
                 ref={groupRef}
-                position={position}
+                position={finalPosition}
+                // Pre-rotate the cylinder to stand upright naturally
+                rotation={[Math.PI / 2, 0, 0]}
                 onPointerOver={() => setHover(true)}
                 onPointerOut={() => setHover(false)}
-                scale={hovered ? 1.2 : 1}
+                scale={hovered && !isMobile ? 1.2 : 1}
             >
                 {/* Coin Body (Cylinder) */}
-                <Cylinder args={[size, size, size * 0.15, 32]}>
+                <Cylinder args={[finalSize, finalSize, finalSize * 0.15, 32]}>
                     <meshStandardMaterial
                         color={hovered ? '#ffffff' : color}
                         metalness={0.7}
@@ -59,9 +67,9 @@ function CryptoCoin({
 
                 {/* Front Symbol */}
                 <Text
-                    position={[0, size * 0.08, 0]}
+                    position={[0, finalSize * 0.08, 0]}
                     rotation={[-Math.PI / 2, 0, 0]}
-                    fontSize={size * 0.9}
+                    fontSize={finalSize * 0.9}
                     color="#121212"
                     anchorX="center"
                     anchorY="middle"
@@ -72,9 +80,9 @@ function CryptoCoin({
 
                 {/* Back Symbol */}
                 <Text
-                    position={[0, -size * 0.08, 0]}
-                    rotation={[Math.PI / 2, 0, 0]}
-                    fontSize={size * 0.9}
+                    position={[0, -finalSize * 0.08, 0]}
+                    rotation={[Math.PI / 2, 0, Math.PI]}
+                    fontSize={finalSize * 0.9}
                     color="#121212"
                     anchorX="center"
                     anchorY="middle"
